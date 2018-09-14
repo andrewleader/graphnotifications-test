@@ -4,8 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Notifications</h2>
 
+@if (User.Identity.IsAuthenticated)
+{
 <p>
     <a asp-action="SendNotification">Create New</a>
 </p>
@@ -22,7 +24,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
@@ -39,3 +42,8 @@
 }
     </tbody>
 </table>
+}
+else
+{
+    <a href="/account/signin">Sign in</a>
+}

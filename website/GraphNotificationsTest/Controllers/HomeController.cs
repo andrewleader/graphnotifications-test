@@ -8,7 +8,6 @@ using GraphNotificationsTest.Models;
 
 namespace GraphNotificationsTest.Controllers
 {
-    [Microsoft.AspNetCore.Authorization.Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()
