@@ -25,14 +25,30 @@
                 <span asp-validation-for="Notification.TargetHostName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Notification.Payload.Visual.Title" class="control-label"></label>
-                <input asp-for="Notification.Payload.Visual.Title" class="form-control" />
-                <span asp-validation-for="Notification.Payload.Visual.Title" class="text-danger"></span>
+                <label asp-for="Notification.AppNotificationId" class="control-label"></label>
+                <input asp-for="Notification.AppNotificationId" class="form-control" />
+                <span asp-validation-for="Notification.AppNotificationId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Notification.Payload.Visual.Body" class="control-label"></label>
-                <input asp-for="Notification.Payload.Visual.Body" class="form-control" />
-                <span asp-validation-for="Notification.Payload.Visual.Body" class="text-danger"></span>
+                <label asp-for="Notification.ExpirationDateTime" class="control-label"></label>
+                <input asp-for="Notification.ExpirationDateTime" class="form-control" />
+                <span asp-validation-for="Notification.ExpirationDateTime" class="text-danger"></span>
+            </div>
+            <p>One of Title, Body, or RawContent must be specified.</p>
+            <div class="form-group">
+                <label asp-for="Notification.Payload.VisualContent.Title" class="control-label"></label>
+                <input asp-for="Notification.Payload.VisualContent.Title" class="form-control" />
+                <span asp-validation-for="Notification.Payload.VisualContent.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notification.Payload.VisualContent.Body" class="control-label"></label>
+                <input asp-for="Notification.Payload.VisualContent.Body" class="form-control" />
+                <span asp-validation-for="Notification.Payload.VisualContent.Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notification.Payload.RawContent" class="control-label"></label>
+                <input asp-for="Notification.Payload.RawContent" class="form-control" />
+                <span asp-validation-for="Notification.Payload.RawContent" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

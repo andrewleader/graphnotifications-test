@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,19 +11,23 @@ namespace GraphNotificationsTest.Helpers
         /// <summary>
         /// Represents the host name of the app to which the calling service wants to post the notification, for the given user.
         /// </summary>
+        [Required]
         public string TargetHostName { get; set; } = "com.andrewleader.graphnotifications-test";
 
         /// <summary>
         /// The unique id set by the app server of a notification that is used to identify and target an individual notification.
         /// </summary>
-        public string AppNotificationId { get; set; }
+        [Required]
+        public string AppNotificationId { get; set; } = Guid.NewGuid().ToString();
 
         /// <summary>
         /// Sets a UTC expiration time on a user notification - when time is up, the notification is removed from the Microsoft Graph notification feed store completely and is no longer part of notification history. Max value is 30 days.
         /// </summary>
-        public DateTimeOffset ExpirationDateTime { get; set; }
+        [Required]
+        public DateTimeOffset ExpirationDateTime { get; set; } = DateTimeOffset.UtcNow.AddDays(15);
 
-        public GraphNotificationPayload Payload { get; set; }
+        [Required]
+        public GraphNotificationPayload Payload { get; set; } = new GraphNotificationPayload();
 
         /// <summary>
         /// Sets how long (in seconds) this notification content will stay in each platform’s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user’s Windows Action Center.
@@ -37,7 +42,7 @@ namespace GraphNotificationsTest.Helpers
         /// </summary>
         public string RawContent { get; set; }
 
-        public GraphNotificationPayloadVisual Visual { get; set; }
+        public GraphNotificationPayloadVisual VisualContent { get; set; } = new GraphNotificationPayloadVisual();
     }
 
     public class GraphNotificationPayloadVisual
