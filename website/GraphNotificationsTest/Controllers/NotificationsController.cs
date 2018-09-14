@@ -61,6 +61,16 @@ namespace GraphNotificationsTest.Controllers
                 return true;
             }
 
+            try
+            {
+                _graphSdkHelper.GetAuthenticatedClient(User);
+            }
+            catch
+            {
+                result = RedirectToAction(actionName: nameof(AccountController.SignOut), controllerName: "Account");
+                return true;
+            }
+
             result = null;
             return false;
         }
