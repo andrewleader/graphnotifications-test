@@ -397,3 +397,6 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+# Ignore gradle properties which has token password in it
+gradle.properties
