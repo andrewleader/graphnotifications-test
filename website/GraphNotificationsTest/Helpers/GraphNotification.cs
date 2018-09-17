@@ -12,7 +12,7 @@ namespace GraphNotificationsTest.Helpers
         /// Represents the host name of the app to which the calling service wants to post the notification, for the given user.
         /// </summary>
         [Required]
-        public string TargetHostName { get; set; } = "com.andrewleader.graphnotifications-test";
+        public string TargetHostName { get; set; } = "iheartwp7.com";
 
         /// <summary>
         /// The unique id set by the app server of a notification that is used to identify and target an individual notification.
